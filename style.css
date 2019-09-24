@@ -1,3 +1,39 @@
 h1{
 font: calibri body;
 }
+.cube div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.1);
+    box-shadow: inset 0 0 30px rgba(125,125,125,0.8);
+    font-size: 20px;
+    text-align: center;
+    line-height: 200px;
+    color: rgba(0,0,0,0.5);
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+@keyframes spin-vertical {
+	from { transform: rotateX(0); }
+	to { transform: rotateX(-360deg); }
+}
+
+.cube-wrap.vertical .cube {
+	margin: 0 auto; /* keeps the cube centered */
+
+	transform-origin: 0 100px;
+	animation: spin-vertical 5s infinite linear;
+}
+
+.cube-wrap.vertical .top {
+	transform: rotateX(-270deg) translateY(-100px);
+}
+
+.cube-wrap.vertical .back {
+	transform: translateZ(-100px) rotateX(180deg);
+}
+
+.cube-wrap.vertical .bottom {
+	transform: rotateX(-90deg) translateY(100px);
+}
